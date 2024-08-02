@@ -1,0 +1,107 @@
+{% include 'header.html' %}
+<div class="container mt-5">
+    <h2>Usuarios</h2>
+    <button class="btn btn-success mb-3" data-toggle="modal" data-target="#createUserModal">Crear Usuario</button>
+    <!-- Modal Crear Usuario -->
+    <div class="modal fade" id="createUserModal" tabindex="-1" role="dialog" aria-labelledby="createUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createUserModalLabel">Crear Usuario</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="create-user-form">
+                        <div class="form-group">
+                            <label for="username">Nombre Usuario</label>
+                            <input type="text" class="form-control" id="username" name="username">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Clave</label>
+                            <input type="password" class="form-control" id="password" name="password">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-password">Confirmar Clave</label>
+                            <input type="password" class="form-control" id="confirm-password" name="confirm_password">
+                        </div>
+                        <div class="form-group">
+                            <label for="firstname">Nombre</label>
+                            <input type="text" class="form-control" id="firstname" name="firstname">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Apellido</label>
+                            <input type="text" class="form-control" id="lastname" name="lastname">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="usertype">Tipo de Usuario</label>
+                            <select class="form-control" id="usertype" name="usertype">
+                                <option>Teacher</option>
+                                <option>Student</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" onclick="createUser()">Crear Usuario</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>Clases</h2>
+    <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#createClassModal">Crear Clase</button>
+    <!-- Modal Crear Clase -->
+    <div class="modal fade" id="createClassModal" tabindex="-1" role="dialog" aria-labelledby="createClassModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createClassModalLabel">Crear Clase</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="create-class-form">
+                        <div class="form-group">
+                            <label for="class-name">Nombre del Tema</label>
+                            <input type="text" class="form-control" id="class-name" name="class_name">
+                        </div>
+                        <div class="form-group">
+                            <label for="class-description">Descripción</label>
+                            <textarea class="form-control" id="class-description" name="class_description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="class-duration">Duración (horas)</label>
+                            <input type="number" class="form-control" id="class-duration" name="class_duration" min="0" max="20">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" onclick="createClass()">Crear Clase</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Listado de Clases -->
+    <div class="row">
+        <div class="col-md-2" style="margin: 10px;">
+            <div class="card" style="width: 120px; height: 120px;">
+                <div class="card-body">
+                    <h5 class="card-title">Clase 1</h5>
+                    <p class="card-text">Descripción</p>
+                    <button class="btn btn-link" onclick="openClassModal(1)">...</button>
+                </div>
+            </div>
+        </div>
+        <!-- Más clases -->
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>En Clase 3dLaB</title>
+</head>
+<body>
+    <header class="bg-primary text-white p-3 d-flex justify-content-between align-items-center">
+        <div>
+            <h1>En Clase 3dLaB</h1>
+        </div>
+        <div>
+            <span id="date"></span>
+            <button id="auth-btn" class="btn btn-secondary ml-3" onclick="handleAuth()"></button>
+        </div>
+    </header>
+    <script>
+        document.getElementById('date').textContent = new Date().toLocaleDateString();
+        // Set auth button text based on user login status
+        function handleAuth() {
+            // Implement login/logout functionality
+        }
+    </script>
+</body>
+</html>
